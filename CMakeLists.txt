@@ -12,10 +12,10 @@ file (GLOB Resources *.qrc)
 file (GLOB UIs *.ui)
 
 # Find package Qt
-find_package(Qt5Core REQUIRED)
-find_package(Qt5Gui REQUIRED)
-find_package(Qt5Widgets REQUIRED)
-find_package(Qt5OpenGL REQUIRED)
+find_package(Qt6Core REQUIRED)
+find_package(Qt6Gui REQUIRED)
+find_package(Qt6Widgets REQUIRED)
+find_package(Qt6OpenGL REQUIRED)
 
 # Use Qt
 set(CMAKE_AUTOMOC ON)
@@ -33,7 +33,7 @@ find_package(VTK
 # Build executable
 add_executable(QtVtkViewer WIN32 ${Sources} ${Headers} ${Resources} ${UIs})
 
-target_link_libraries(QtVtkViewer PRIVATE Qt5::Widgets Qt5::OpenGL VTK::GUISupportQt VTK::IOLegacy)
+target_link_libraries(QtVtkViewer PRIVATE Qt6::Widgets Qt6::OpenGL VTK::GUISupportQt VTK::IOLegacy)
 
 vtk_module_autoinit(
     TARGETS QtVtkViewer
